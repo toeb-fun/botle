@@ -105,6 +105,7 @@ function clickPress(event) {
     if (event.key == "Enter") {
     guess_number = guess_number + 1; 
     guess_word = document.getElementById("guess" + guess_number).value;
+    guess_word = guess_word.toLowerCase();
     console.log(guess_number);
     console.log(guess_word);
     if (guess_word.length == 5 && word_list.includes(guess_word)) {
