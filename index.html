@@ -45,17 +45,17 @@
 </div>
 </main>
 <main class="text">
-<input type="text" autocapitalize="none" class="textbox" id="guess1" onkeypress="clickPress(event); return /[a-z]/i.test(event.key)" style="input:focus;" maxlength="5" autofocus pattern="^[A-Z]">
+<input type="text" autocapitalize="none" autocorrect="off" class="textbox" id="guess1" onkeypress="clickPress(event); return /[a-z]/i.test(event.key)" style="input:focus;" maxlength="5" autofocus pattern="^[A-Z]">
 <div></div>
-<input type="text" autocapitalize="none" class="textbox" id="guess2" onkeypress="clickPress(event); return /[a-z]/i.test(event.key)" style="opacity:0; pointer-events:none;" maxlength="5" autofocus pattern="^[A-Z]">
+<input type="text" autocapitalize="none" autocorrect="off" class="textbox" id="guess2" onkeypress="clickPress(event); return /[a-z]/i.test(event.key)" style="opacity:0; pointer-events:none;" maxlength="5" autofocus pattern="^[A-Z]">
 <div></div>
-<input type="text" autocapitalize="none" class="textbox" id="guess3" onkeypress="clickPress(event); return /[a-z]/i.test(event.key)" style="opacity:0; pointer-events:none;" maxlength="5" autofocus pattern="^[A-Z]">
+<input type="text" autocapitalize="none" autocorrect="off" class="textbox" id="guess3" onkeypress="clickPress(event); return /[a-z]/i.test(event.key)" style="opacity:0; pointer-events:none;" maxlength="5" autofocus pattern="^[A-Z]">
 <div></div>
-<input type="text" autocapitalize="none" class="textbox" id="guess4" onkeypress="clickPress(event); return /[a-z]/i.test(event.key)" style="opacity:0; pointer-events:none;" maxlength="5" autofocus pattern="^[A-Z]">
+<input type="text" autocapitalize="none" autocorrect="off" class="textbox" id="guess4" onkeypress="clickPress(event); return /[a-z]/i.test(event.key)" style="opacity:0; pointer-events:none;" maxlength="5" autofocus pattern="^[A-Z]">
 <div></div>
-<input type="text" autocapitalize="none" class="textbox" id="guess5" onkeypress="clickPress(event); return /[a-z]/i.test(event.key)" style="opacity:0; pointer-events:none;" maxlength="5" autofocus pattern="^[A-Z]">
+<input type="text" autocapitalize="none" autocorrect="off" class="textbox" id="guess5" onkeypress="clickPress(event); return /[a-z]/i.test(event.key)" style="opacity:0; pointer-events:none;" maxlength="5" autofocus pattern="^[A-Z]">
 <div></div>
-<input type="text" autocapitalize="none" class="textbox" id="guess6" onkeypress="clickPress(event); return /[a-z]/i.test(event.key)" style="opacity:0; pointer-events:none;" maxlength="5" autofocus pattern="^[A-Z]">
+<input type="text" autocapitalize="none" autocorrect="off" class="textbox" id="guess6" onkeypress="clickPress(event); return /[a-z]/i.test(event.key)" style="opacity:0; pointer-events:none;" maxlength="5" autofocus pattern="^[A-Z]">
 </main>
 
 </center>
@@ -105,8 +105,6 @@ function clickPress(event) {
     if (event.key == "Enter") {
     guess_number = guess_number + 1; 
     guess_word = document.getElementById("guess" + guess_number).value;
-    guess_word = guess_word.toUpperCase();
-
     console.log(guess_number);
     console.log(guess_word);
     if (guess_word.length == 5 && word_list.includes(guess_word)) {
