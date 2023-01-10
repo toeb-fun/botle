@@ -1,4 +1,5 @@
 <html>
+
 <img src="mobileonly.png" id="mobileonly" class="mobileonly"></img>
 <center id="everything">
 
@@ -106,8 +107,7 @@
 <img class="wordbox" id="robot5_6" src="black.png"></img>
 </div>
 </main>
-<div class="bottom" id="oskeyboard" onclick="check1();">
-
+<div class="bottom" id="oskeyboard" onclick="green(); yellow(); grey();">
 	<button id="q" onclick="q();">q</button>
 	<button id="w" onclick="w();">w</button>
 	<button id="e" onclick="e();">e</button>
@@ -657,39 +657,20 @@ function back(){
 function enter(){
    document.addEventListener("name", clickPress());
 };
-function check1() { 
-    console.log(greenletter); 
-    console.log(yellowletter);
-    console.log(greyletter);   
-    document.addEventListener("check2", check2());
 
-
-};
-function check2() {
-greennumber = 0
-while (true) {
+function green(){
+for (greennumber = 0; greennumber < greenletter.length; greennumber++) {
     document.getElementById(greenletter[greennumber]).style.backgroundColor = "538D4E";
-    greennumber = greennumber + 1;
-    if (greennumber == greenletter.length) {            
-        break;
-    } 
-};
-yellownumber = 0
-while (true) {
-    document.getElementById(yellowletter[yellownumber]).style.backgroundColor = "B59F3A";
-    yellownumber = yellownumber + 1;
-    if (yellownumber == yellowletter.length) {            
-        break;
-    } 
-};
-greynumber = 0
-while (true) {
-    document.getElementById(greyletter[greynumber]).style.backgroundColor = "3A3A3C";
-    greynumber = greynumber + 1;
-    if (greynumber == greyletter.length) {            
-        break;
-    } 
 }
 };
-
+function yellow(){
+for (yellownumber = 0; yellownumber < yellowletter.length; yellownumber++) {
+    document.getElementById(yellowletter[yellownumber]).style.backgroundColor = "B59F3A";
+}
+};
+function grey(){
+for (greynumber = 0; greynumber < greyletter.length; greynumber++) {
+    document.getElementById(greyletter[greynumber]).style.backgroundColor = "3A3A3C";
+}
+};
 </script>
