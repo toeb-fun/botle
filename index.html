@@ -2,7 +2,6 @@
 <center id="everything" class="everything">
 <h1 style="color:white; position: absolute; left:0; right:0; margin-left: auto; margin-right: auto; margin-top: 20vh; text-align: center; font-family:'Courier Prime', monospace; " id="puzzleheader"></h1>
 
-<img src="mobileonly.png" id="mobileonly" class="mobileonly"></img>
 <div class="top"><img src="botlelogo.png" class="botlelogo"></img></div>
 <body onload="onLoad()">
 </body>
@@ -241,6 +240,11 @@ document.body.appendChild(h1);
   greyletter = "";
   greenletter = "";
   yellowletter = "";
+while(True){
+   document.addEventListener("grey", grey());
+   document.addEventListener("yellow", yellow());
+   document.addEventListener("green", green());
+}
 };
 function clickinput() {
   document.getElementById("guess1").blur();
@@ -252,6 +256,12 @@ function clickinput() {
 };
 function clickPress(event) {
     window.guess_number = window.guess_number + 1; 
+
+    guess_word = document.getElementById("guess" + window.guess_number).value;
+    guess_word = guess_word.toLowerCase();
+    console.log(window.guess_number);
+    console.log(guess_word);
+    if (guess_word.length == 5 && word_list.includes(guess_word)) {	
 if (guess_number == 1){
     document.getElementById("robot1_1").src = "GREY.png";
     document.getElementById("robot2_1").src = "GREY.png";
@@ -294,11 +304,6 @@ if (guess_number == 6){
     document.getElementById("robot4_6").src = "GREY.png";
     document.getElementById("robot5_6").src = "GREY.png";
 }
-    guess_word = document.getElementById("guess" + window.guess_number).value;
-    guess_word = guess_word.toLowerCase();
-    console.log(window.guess_number);
-    console.log(guess_word);
-    if (guess_word.length == 5 && word_list.includes(guess_word)) {	
 if (window.guess_number == 6){
    window.guess_number = 6
    console.log(window.guess_number);
@@ -693,13 +698,11 @@ function enter(){
    document.addEventListener("name", clickPress());
 };
 
-function green(){
-for (greennumber = 0; greennumber < greenletter.length; greennumber++) {
-    document.getElementById(greenletter[greennumber]).style.backgroundColor = "538D4E";
-}
-};
 function yellow(){
 for (yellownumber = 0; yellownumber < yellowletter.length; yellownumber++) {
+if (greenletter.includes(yellowletter[yellownumber])){
+yellowletter = yellowletter.replace(yellowletter[yellownumber], '');
+};
     document.getElementById(yellowletter[yellownumber]).style.backgroundColor = "B59F3A";
 }
 };
@@ -708,5 +711,12 @@ for (greynumber = 0; greynumber < greyletter.length; greynumber++) {
     document.getElementById(greyletter[greynumber]).style.backgroundColor = "3A3A3C";
 }
 };
-
+function green(){
+for (greennumber = 0; greennumber < greenletter.length; greennumber++) {
+if (greenletter.includes(yellowletter[yellownumber])){
+yellowletter = yellowletter.replace(yellowletter[yellownumber], '');
+};
+    document.getElementById(greenletter[greennumber]).style.backgroundColor = "538D4E";
+}
+};
 </script>
